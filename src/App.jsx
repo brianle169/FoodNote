@@ -1,11 +1,5 @@
-import './App.css';
+import './styles/App.css';
 
-function App() {
-    return (
-        <>
-            <h1>Hello</h1>
-        </>
-    );
-}
+function App() {}
 
 export default App;
