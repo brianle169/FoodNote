@@ -1,0 +1,63 @@
+.editor,
+.display {
+    background-color: white;
+    padding: 1rem;
+}
+.editor,
+.display,
+.input-section,
+.input-field input {
+    border-radius: 8px;
+    -webkit-box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.54);
+    box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.54);
+}
+
+.editor {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.display {
+    margin: 10px;
+}
+
+.information-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.input-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.input-field input {
+    border-radius: 8px;
+    padding: 5px;
+    outline: none;
+    border: 2px solid grey;
+}
+
+@media (min-width: 1000px) {
+    .editor {
+        min-width: 40%;
+        padding: 1rem;
+    }
+    .display {
+        min-width: 60%;
+        padding: 1rem;
+    }
+}
+
+@media (min-width: 1500px) {
+    .editor {
+        min-width: 600px;
+    }
+    .display {
+        min-width: 800px;
+    }
+}
