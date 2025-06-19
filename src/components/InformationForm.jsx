@@ -1,4 +1,4 @@
-export default function InformationForm() {
+export default function InformationForm({ handlers }) {
     return (
         <>
             <h2>Recipe Information</h2>
@@ -10,6 +10,7 @@ export default function InformationForm() {
                         name="recipe-name"
                         id="recipe-name"
                         placeholder="E.g.: Spaghetti Carbonara"
+                        onChange={handlers.recipeNameChangeHandler}
                     />
                 </div>
                 <div className="input-field">
@@ -21,6 +22,7 @@ export default function InformationForm() {
                         name="prep-time"
                         id="prep-time"
                         placeholder="E.g.: 25"
+                        onChange={handlers.prepTimeChangeHandler}
                     />
                 </div>
                 <div className="input-field">
@@ -32,6 +34,7 @@ export default function InformationForm() {
                         name="cook-time"
                         id="cook-time"
                         placeholder="E.g.: 60"
+                        onChange={handlers.cookTimeChangeHandler}
                     />
                 </div>
                 <div className="input-field">
@@ -41,6 +44,7 @@ export default function InformationForm() {
                         name="servings"
                         id="servings"
                         placeholder="E.g.: 4"
+                        onChange={handlers.servingsChangeHandler}
                     />
                 </div>
             </div>

@@ -23,17 +23,20 @@ function App() {
     };
 
     const handlers = {
-        recipeNameChangeHandler,
-        prepTimeChangeHandler,
-        cookTimeChangeHandler,
-        servingsChangeHandler,
+        informationForm: {
+            recipeNameChangeHandler,
+            prepTimeChangeHandler,
+            cookTimeChangeHandler,
+            servingsChangeHandler,
+        },
     };
 
     const recipe = {
         recipeName,
-        prepTime,
-        cookTime,
-        servings,
+        prepTime: parseInt(prepTime),
+        cookTime: parseInt(cookTime),
+        totalTime: parseInt(parseInt(prepTime) + parseInt(cookTime)),
+        servings: parseInt(servings),
     };
 
     return (

@@ -1,7 +1,19 @@
-export default function Display() {
+export default function Display({ recipe }) {
     return (
         <div className="display">
-            <h2>Display</h2>
+            <h2>{recipe.recipeName}</h2>
+            <p>
+                <strong>Preparation time:</strong> {recipe.prepTime} minutes
+            </p>
+            <p>
+                <strong>Cooking time:</strong> {recipe.cookTime} minutes
+            </p>
+            <p>
+                <strong>Servings:</strong> {recipe.servings}
+            </p>
+            <p>
+                <strong>Total time:</strong> {recipe.totalTime} minutes
+            </p>
         </div>
     );
 }

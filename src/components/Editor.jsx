@@ -1,8 +1,8 @@
 import InformationForm from './InformationForm';
-export default function Editor() {
+export default function Editor({ handlers }) {
     return (
         <div className="editor">
-            <InformationForm />
+            <InformationForm handlers={handlers.informationForm} />
         </div>
     );
 }
