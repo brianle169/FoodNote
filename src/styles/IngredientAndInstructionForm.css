@@ -1,28 +1,36 @@
-.ingredients-form {
-    margin-top: 1rem;
+.ingredients-form,
+.instructions-form {
+    margin-top: 2rem;
     padding-bottom: 1.5rem;
-    border-bottom: 3px solid #f3be4c;
+}
+
+.ingredients-list,
+.instructions-list {
+    gap: 0.5rem;
+    margin-top: 1rem;
 }
 
 .ingredients-list {
-    gap: 0.5rem;
-    margin-top: 1rem;
     list-style-type: circle;
 }
 
-.ingredients-form form {
+.ingredients-form form,
+.instructions-form form {
     display: none;
 }
-.ingredients-form form.visible {
+.ingredients-form form.visible,
+.instructions-form form.visible {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
 }
 
-.ingredients-form > button {
+.ingredients-form > button,
+.instructions-form > button {
     display: none;
 }
-.ingredients-form > button.visible {
+.ingredients-form > button.visible,
+.instructions-form > button.visible {
     display: block;
     border-radius: 8px;
     outline: none;
@@ -36,7 +44,9 @@
 }
 
 .edit-ingredient-button,
-.delete-ingredient-button {
+.delete-ingredient-button,
+.edit-instruction-button,
+.delete-instruction-button {
     display: inline-block;
     background-size: cover;
     background-color: transparent;
@@ -45,23 +55,28 @@
     margin-left: 0.5rem;
 }
 
-.edit-ingredient-button {
+.edit-ingredient-button,
+.edit-instruction-button {
     background-image: url('../assets/foodnote_edit_ingredients_icon.svg');
 }
 
-.delete-ingredient-button {
+.delete-ingredient-button,
+.delete-instruction-button {
     background-image: url('../assets/foodnote_delet_ingredient_icon.svg');
 }
 
 @media (min-width: 1000px) {
-    .ingredients-form > button.visible:hover {
+    .ingredients-form > button.visible:hover,
+    .instructions-form > button.visible:hover {
         cursor: pointer;
         translate: 0rem -0.3rem;
         box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.54);
     }
 
     .edit-ingredient-button:hover,
-    .delete-ingredient-button:hover {
+    .delete-ingredient-button:hover,
+    .edit-instruction-button:hover,
+    .delete-instruction-button:hover {
         cursor: pointer;
         box-shadow: none;
     }

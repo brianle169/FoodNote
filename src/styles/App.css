@@ -1,8 +1,9 @@
 .editor,
 .display {
     background-color: white;
-    padding: 0 1rem;
+    padding: 2rem;
 }
+
 .editor,
 .display,
 .input-section,
@@ -16,11 +17,19 @@
     margin: 10px;
     display: flex;
     flex-direction: column;
-    padding: 1rem;
+}
+
+.editor h2 {
+    background-color: #f3be4c;
+    padding: 0.5rem;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0px 8px 7px -3px rgba(0, 0, 0, 0.39);
+    -webkit-box-shadow: 0px 8px 7px -3px rgba(0, 0, 0, 0.39);
+    -moz-box-shadow: 0px 8px 7px -3px rgba(0, 0, 0, 0.39);
 }
 
 .display {
-    padding: 1rem;
     margin: 10px;
 }
 
@@ -32,7 +41,8 @@
 }
 
 .input-field input,
-select {
+select,
+textarea {
     border-radius: 8px;
     padding: 5px 10px;
     outline: none;
@@ -71,7 +81,7 @@ button {
     .editor {
         min-width: 40%;
         max-height: 100vh;
-        overflow-y: scroll;
+        overflow-y: auto;
     }
     .display {
         min-width: 60%;

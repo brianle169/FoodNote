@@ -14,6 +14,17 @@ export default function Display({ recipe }) {
             <p>
                 <strong>Total time:</strong> {recipe.totalTimeString()}
             </p>
+            <h3>Ingredients</h3>
+            <ul className="ingredients-list">
+                {recipe.ingredients.map((ingredient, index) => (
+                    <li
+                        key={index}
+                        className="ingredient-list-item"
+                    >
+                        {ingredient.toString()}
+                    </li>
+                ))}
+            </ul>
         </div>
     );
 }

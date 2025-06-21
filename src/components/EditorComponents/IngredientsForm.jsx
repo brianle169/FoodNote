@@ -1,7 +1,5 @@
 import { useState } from 'react';
-import '../../styles/IngredientsForm.css';
-import '../../assets/foodnote_delet_ingredient_icon.svg';
-import '../../assets/foodnote_edit_ingredients_icon.svg';
+import '../../styles/IngredientAndInstructionForm.css';
 import IngredientInputForm from './IngredientInputForm';
 
 export default function IngredientsForm({ handlers, ingredients }) {

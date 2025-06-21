@@ -9,8 +9,7 @@ function App() {
     const [cookTime, setCookTime] = useState(0);
     const [servings, setServings] = useState(0);
     const [ingredients, setIngredients] = useState([]);
-
-    const [instructions, setInstructions] = useState([]);
+    const [instructions, setInstructions] = useState(['Sample instruction']);
 
     const recipeNameChangeHandler = (e) => {
         setRecipeName((prevRecipeName) => (prevRecipeName = e.target.value));
@@ -68,7 +67,27 @@ function App() {
             return newIngredients;
         });
     };
-    const instructionsChangeHandler = (e) => {};
+    const addInstructionHandler = (e) => {
+        const newInstruction = e.target.instruction.value;
+        setInstructions((prevInstructions) => [
+            ...prevInstructions,
+            newInstruction,
+        ]);
+        e.target.instruction.value = '';
+    };
+    const deleteInstructionHandler = (index) => {
+        setInstructions((prevInstructions) =>
+            prevInstructions.filter((_, i) => i !== index)
+        );
+    };
+    const editInstructionHandler = (index, e) => {
+        const updatedInstruction = e.target.instruction.value;
+        setInstructions((prevInstructions) => {
+            const newInstructions = [...prevInstructions];
+            newInstructions[index] = updatedInstruction;
+            return newInstructions;
+        });
+    };
 
     const handlers = {
         informationForm: {
@@ -81,6 +100,11 @@ function App() {
             addIngredientsHandler,
             deleteIngredientHandler,
             editIngredientHandler,
+        },
+        instructionsForm: {
+            addInstructionHandler,
+            deleteInstructionHandler,
+            editInstructionHandler,
         },
     };
 
@@ -98,6 +122,8 @@ function App() {
             return `${hours} hour(s) and ${minutes} minute(s)`;
         },
         servings: parseInt(servings),
+        ingredients,
+        instructions,
     };
 
     return (
@@ -105,6 +131,7 @@ function App() {
             <Editor
                 handlers={handlers}
                 ingredients={ingredients}
+                instructions={instructions}
             />
             <Display recipe={recipe} />
         </>
