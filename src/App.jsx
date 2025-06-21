@@ -1,6 +1,6 @@
 import './styles/App.css';
-import Editor from './components/Editor.jsx';
-import Display from './components/Display.jsx';
+import Editor from './components/EditorComponents/Editor.jsx';
+import Display from './components/DisplayComponents/Display.jsx';
 import { useState } from 'react';
 
 function App() {
@@ -8,6 +8,20 @@ function App() {
     const [prepTime, setPrepTime] = useState(0);
     const [cookTime, setCookTime] = useState(0);
     const [servings, setServings] = useState(0);
+    const [ingredients, setIngredients] = useState([
+        {
+            quantity: 1.5,
+            unit: 'cups',
+            ingredient: 'flour',
+            toString: function () {
+                return `${this.quantity} ${
+                    this.unit ? this.unit + ' of ' : ' '
+                }${this.ingredient}`;
+            },
+        },
+    ]);
+
+    const [instructions, setInstructions] = useState([]);
 
     const recipeNameChangeHandler = (e) => {
         setRecipeName((prevRecipeName) => (prevRecipeName = e.target.value));
@@ -21,6 +35,33 @@ function App() {
     const servingsChangeHandler = (e) => {
         setServings((prevServings) => (prevServings = e.target.value));
     };
+    const addIngredientsHandler = (e) => {
+        const newIngredient = {
+            quantity: parseFloat(e.target['ingredient-quantity'].value),
+            unit: e.target['ingredient-unit'].value,
+            ingredient: e.target['ingredient-name'].value,
+            toString: function () {
+                return `${this.quantity} ${
+                    this.unit ? this.unit + ' of ' : ' '
+                }${this.ingredient}`;
+            },
+        };
+        setIngredients((prevIngredients) => [
+            ...prevIngredients,
+            newIngredient,
+        ]);
+
+        // reset the form fields
+        e.target['ingredient-quantity'].value = 0;
+        e.target['ingredient-unit'].value = '';
+        e.target['ingredient-name'].value = '';
+    };
+    const deleteIngredientHandler = (index) => {
+        setIngredients((prevIngredients) =>
+            prevIngredients.filter((_, i) => i !== index)
+        );
+    };
+    const instructionsChangeHandler = (e) => {};
 
     const handlers = {
         informationForm: {
@@ -28,6 +69,10 @@ function App() {
             prepTimeChangeHandler,
             cookTimeChangeHandler,
             servingsChangeHandler,
+        },
+        ingredientsForm: {
+            addIngredientsHandler,
+            deleteIngredientHandler,
         },
     };
 
@@ -41,7 +86,10 @@ function App() {
 
     return (
         <>
-            <Editor handlers={handlers} />
+            <Editor
+                handlers={handlers}
+                ingredients={ingredients}
+            />
             <Display recipe={recipe} />
         </>
     );
