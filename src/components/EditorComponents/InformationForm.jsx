@@ -1,3 +1,4 @@
+import '../../styles/InformationForm.css';
 export default function InformationForm({ handlers }) {
     return (
         <div className="information-form">

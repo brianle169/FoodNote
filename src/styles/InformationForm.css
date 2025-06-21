@@ -1,0 +1,11 @@
+.information-form {
+    margin-top: 1rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 3px solid #f3be4c;
+}
+
+.information-form-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}

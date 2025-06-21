@@ -1,0 +1,68 @@
+.ingredients-form {
+    margin-top: 1rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 3px solid #f3be4c;
+}
+
+.ingredients-list {
+    gap: 0.5rem;
+    margin-top: 1rem;
+    list-style-type: circle;
+}
+
+.ingredients-form form {
+    display: none;
+}
+.ingredients-form form.visible {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.ingredients-form > button {
+    display: none;
+}
+.ingredients-form > button.visible {
+    display: block;
+    border-radius: 8px;
+    outline: none;
+    border: none;
+    padding: 5px 10px;
+    background-color: #f3be4c;
+    font-weight: bold;
+    color: white;
+    translate: 0rem 0rem;
+    transition: translate 0.3s ease, box-shadow 0.3s ease;
+}
+
+.edit-ingredient-button,
+.delete-ingredient-button {
+    display: inline-block;
+    background-size: cover;
+    background-color: transparent;
+    min-width: 1.5rem;
+    min-height: 1.5rem;
+    margin-left: 0.5rem;
+}
+
+.edit-ingredient-button {
+    background-image: url('../assets/foodnote_edit_ingredients_icon.svg');
+}
+
+.delete-ingredient-button {
+    background-image: url('../assets/foodnote_delet_ingredient_icon.svg');
+}
+
+@media (min-width: 1000px) {
+    .ingredients-form > button.visible:hover {
+        cursor: pointer;
+        translate: 0rem -0.3rem;
+        box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.54);
+    }
+
+    .edit-ingredient-button:hover,
+    .delete-ingredient-button:hover {
+        cursor: pointer;
+        box-shadow: none;
+    }
+}

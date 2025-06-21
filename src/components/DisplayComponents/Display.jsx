@@ -12,7 +12,7 @@ export default function Display({ recipe }) {
                 <strong>Servings:</strong> {recipe.servings}
             </p>
             <p>
-                <strong>Total time:</strong> {recipe.totalTime} minutes
+                <strong>Total time:</strong> {recipe.totalTimeString()}
             </p>
         </div>
     );

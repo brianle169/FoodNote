@@ -8,18 +8,7 @@ function App() {
     const [prepTime, setPrepTime] = useState(0);
     const [cookTime, setCookTime] = useState(0);
     const [servings, setServings] = useState(0);
-    const [ingredients, setIngredients] = useState([
-        {
-            quantity: 1.5,
-            unit: 'cups',
-            ingredient: 'flour',
-            toString: function () {
-                return `${this.quantity} ${
-                    this.unit ? this.unit + ' of ' : ' '
-                }${this.ingredient}`;
-            },
-        },
-    ]);
+    const [ingredients, setIngredients] = useState([]);
 
     const [instructions, setInstructions] = useState([]);
 
@@ -61,6 +50,24 @@ function App() {
             prevIngredients.filter((_, i) => i !== index)
         );
     };
+
+    const editIngredientHandler = (index, e) => {
+        const updatedIngredient = {
+            quantity: parseFloat(e.target['ingredient-quantity'].value),
+            unit: e.target['ingredient-unit'].value,
+            ingredient: e.target['ingredient-name'].value,
+            toString: function () {
+                return `${this.quantity} ${
+                    this.unit ? this.unit + ' of ' : ' '
+                }${this.ingredient}`;
+            },
+        };
+        setIngredients((prevIngredients) => {
+            const newIngredients = [...prevIngredients];
+            newIngredients[index] = updatedIngredient;
+            return newIngredients;
+        });
+    };
     const instructionsChangeHandler = (e) => {};
 
     const handlers = {
@@ -73,6 +80,7 @@ function App() {
         ingredientsForm: {
             addIngredientsHandler,
             deleteIngredientHandler,
+            editIngredientHandler,
         },
     };
 
@@ -81,6 +89,14 @@ function App() {
         prepTime: parseInt(prepTime),
         cookTime: parseInt(cookTime),
         totalTime: parseInt(parseInt(prepTime) + parseInt(cookTime)),
+        totalTimeString: function () {
+            if (this.totalTime < 60) {
+                return `${this.totalTime} minutes`;
+            }
+            const hours = Math.floor(this.totalTime / 60);
+            const minutes = this.totalTime % 60;
+            return `${hours} hour(s) and ${minutes} minute(s)`;
+        },
         servings: parseInt(servings),
     };
 
