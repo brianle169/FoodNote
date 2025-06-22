@@ -18,22 +18,29 @@ export default function IngredientInputForm({
                 }}
             >
                 <div className="input-field">
-                    <label htmlFor="ingredient-quantity">Quantity: </label>
+                    {/* <label htmlFor="ingredient-quantity">Quantity: </label> */}
                     <input
                         type="number"
                         name="ingredient-quantity"
                         id="ingredient-quantity"
-                        placeholder="E.g.: 1.5"
+                        placeholder="Quantity (example: 1.5)"
                         step="0.1"
                         required
                     />
                 </div>
                 <div className="input-field">
-                    <label htmlFor="ingredient-unit">Unit: </label>
+                    {/* <label htmlFor="ingredient-unit">Unit: </label> */}
                     <select
                         name="ingredient-unit"
                         id="ingredient-unit"
                     >
+                        <option
+                            value=""
+                            disabled
+                            selected
+                        >
+                            Unit of measurement
+                        </option>
                         <option value="gram(s)">gram(s)</option>
                         <option value="kilogram(s)">kilogram(s)</option>
                         <option value="lb(s)">lb(s)</option>
@@ -47,13 +54,13 @@ export default function IngredientInputForm({
                     </select>
                 </div>
                 <div className="input-field">
-                    <label htmlFor="ingredient-name">Ingredient: </label>
+                    {/* <label htmlFor="ingredient-name">Ingredient: </label> */}
                     <input
                         type="text"
                         name="ingredient-name"
                         id="ingredient-name"
                         required
-                        placeholder="E.g.: flour"
+                        placeholder="Ingredient name (example: flour)"
                     />
                 </div>
                 <div className="button-container">

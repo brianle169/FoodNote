@@ -18,7 +18,7 @@ export default function InstructionInputForm({
                 }}
             >
                 <div className="input-field">
-                    <label htmlFor="instruction">Instruction: </label>
+                    {/* <label htmlFor="instruction">Instruction: </label> */}
                     <textarea
                         name="instruction"
                         id="instruction"

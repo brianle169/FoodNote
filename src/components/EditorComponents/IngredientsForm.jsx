@@ -12,7 +12,7 @@ export default function IngredientsForm({ handlers, ingredients }) {
     };
 
     const resetForm = () => {
-        document.getElementById('ingredient-quantity').value = 0;
+        document.getElementById('ingredient-quantity').value = null;
         document.getElementById('ingredient-unit').value = '';
         document.getElementById('ingredient-name').value = '';
     };
