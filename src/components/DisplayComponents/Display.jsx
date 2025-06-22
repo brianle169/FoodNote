@@ -15,6 +15,38 @@ export default function Display({ recipe }) {
                     Get PDF
                 </PDFDownloadLink>
             </button>
+            <div
+                style={{
+                    display: 'flex',
+                    gap: '0.5rem',
+                    marginBottom: '1rem',
+                    alignItems: 'center',
+                    position: 'absolute',
+                    top: 20,
+                    right: 20,
+                }}
+            >
+                <a
+                    href="https://github.com/brianle169/FoodNote"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <button
+                        type="button"
+                        className="github-link-button"
+                    ></button>
+                </a>
+                <a
+                    href="https://www.linkedin.com/in/cminhle/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <button
+                        type="button"
+                        className="linkedin-link-button"
+                    ></button>
+                </a>
+            </div>
             <h1>{recipe.recipeName}</h1>
             <div className="recipe-info">
                 <span>

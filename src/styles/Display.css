@@ -28,3 +28,27 @@
 .display.viewer {
     padding: 0;
 }
+
+.github-link-button,
+.linkedin-link-button {
+    display: inline-block;
+    background-size: cover;
+    background-color: transparent;
+    min-width: 2.5rem;
+    min-height: 2.5rem;
+}
+
+.github-link-button:hover,
+.linkedin-link-button:hover {
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+}
+.linkedin-link-button {
+    background-image: url('../assets/linkedin-svgrepo-com.svg');
+    min-width: 3rem;
+    min-height: 3rem;
+}
+.github-link-button {
+    background-image: url('../assets/github-142-svgrepo-com.svg');
+}
