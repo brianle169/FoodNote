@@ -1,13 +1,22 @@
+import '../../styles/Display.css';
 export default function Display({ recipe }) {
     return (
         <div className="display">
+            <button
+                className="download-button"
+                onClick={() => {
+                    console.log('Generating PDF...');
+                }}
+            >
+                Get PDF
+            </button>
             <h1>{recipe.recipeName}</h1>
             <div className="recipe-info">
                 <span>
-                    <strong>Preparation Time:</strong> {recipe.prepTime} minutes
+                    <strong>Preparation:</strong> {recipe.prepTime} minutes
                 </span>
                 <span>
-                    <strong>Cook Time:</strong> {recipe.cookTime} minutes
+                    <strong>Cooking:</strong> {recipe.cookTime} minutes
                 </span>
                 <span>
                     <strong>Total Time:</strong> {recipe.totalTimeString()}

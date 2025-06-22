@@ -1,6 +1,6 @@
 const sampleIngredients = [
     {
-        name: 'Spaghetti',
+        ingredient: 'Spaghetti',
         quantity: 400,
         unit: 'gram(s)',
         toString: function () {
@@ -10,7 +10,7 @@ const sampleIngredients = [
         },
     },
     {
-        name: 'large eggs',
+        ingredient: 'large eggs',
         quantity: 4,
         unit: '',
         toString: function () {
@@ -20,7 +20,7 @@ const sampleIngredients = [
         },
     },
     {
-        name: 'Pecorino Romano cheese',
+        ingredient: 'Pecorino Romano cheese',
         quantity: 100,
         unit: 'gram(s)',
         toString: function () {
@@ -30,7 +30,7 @@ const sampleIngredients = [
         },
     },
     {
-        name: 'Black pepper',
+        ingredient: 'Black pepper',
         quantity: 1,
         unit: 'tsp',
         toString: function () {

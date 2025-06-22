@@ -58,7 +58,7 @@ export default function InstructionsForm({ handlers, instructions }) {
                 handlers={handlers}
             />
             <button
-                style={{ marginTop: '1.5rem' }}
+                style={{ marginTop: '1.5rem', alignSelf: 'center' }}
                 className={instructionInputVisible ? '' : 'visible'}
                 onClick={() => {
                     resetForm();

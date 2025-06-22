@@ -1,0 +1,26 @@
+.recipe-info {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.recipe-info span {
+    margin-bottom: 5px;
+}
+
+.ingredients h2,
+.instructions h2 {
+    margin-bottom: 0.5rem;
+}
+
+.ingredients li,
+.instructions li {
+    margin-bottom: 5px;
+}
+
+.download-button {
+    align-self: start;
+    margin-bottom: 10px;
+}

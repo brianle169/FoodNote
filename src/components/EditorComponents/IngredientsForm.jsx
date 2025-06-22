@@ -67,7 +67,7 @@ export default function IngredientsForm({ handlers, ingredients }) {
                 handlers={handlers}
             />
             <button
-                style={{ marginTop: '1.5rem' }}
+                style={{ marginTop: '1.5rem', alignSelf: 'center' }}
                 className={ingredientInputVisible ? '' : 'visible'}
                 onClick={() => {
                     resetForm();
