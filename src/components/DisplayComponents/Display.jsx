@@ -1,14 +1,19 @@
 import '../../styles/Display.css';
+import RecipePDF from './RecipePDF';
+import { PDFDownloadLink } from '@react-pdf/renderer';
+
 export default function Display({ recipe }) {
     return (
         <div className="display">
-            <button
-                className="download-button"
-                onClick={() => {
-                    console.log('Generating PDF...');
-                }}
-            >
-                Get PDF
+            <button className="download-button">
+                <PDFDownloadLink
+                    key={Date.now()}
+                    document={<RecipePDF recipe={recipe} />}
+                    fileName={recipe.recipeName + '.pdf'}
+                    style={{ textDecoration: 'none', color: '#fff' }}
+                >
+                    Get PDF
+                </PDFDownloadLink>
             </button>
             <h1>{recipe.recipeName}</h1>
             <div className="recipe-info">

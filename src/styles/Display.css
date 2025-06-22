@@ -24,3 +24,7 @@
     align-self: start;
     margin-bottom: 10px;
 }
+
+.display.viewer {
+    padding: 0;
+}
