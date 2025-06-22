@@ -99,11 +99,11 @@ Font.register({
     family: 'Noto Sans',
     fonts: [
         {
-            src: 'http://fonts.gstatic.com/s/notosans/v6/LeFlHvsZjXu2c3ZRgBq9nKCWcynf_cDxXwCLxiixG1c.ttf',
+            src: 'https://fonts.gstatic.com/s/notosans/v6/LeFlHvsZjXu2c3ZRgBq9nKCWcynf_cDxXwCLxiixG1c.ttf',
             fontWeight: 'normal',
         },
         {
-            src: 'http://fonts.gstatic.com/s/notosans/v6/PIbvSEyHEdL91QLOQRnZ19qQynqKV_9Plp7mupa0S4g.ttf',
+            src: 'https://fonts.gstatic.com/s/notosans/v6/PIbvSEyHEdL91QLOQRnZ19qQynqKV_9Plp7mupa0S4g.ttf',
             fontWeight: 'bold',
         },
     ],
