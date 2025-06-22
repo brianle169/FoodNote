@@ -1,4 +1,11 @@
-import { Document, Page, Text, View, StyleSheet } from '@react-pdf/renderer';
+import {
+    Document,
+    Page,
+    Text,
+    View,
+    StyleSheet,
+    Font,
+} from '@react-pdf/renderer';
 
 export default function RecipePDF({ recipe }) {
     return (
@@ -88,11 +95,27 @@ const ListItem = ({ children, bullet }) => {
     );
 };
 
+Font.register({
+    family: 'Noto Sans',
+    fonts: [
+        {
+            src: 'http://fonts.gstatic.com/s/notosans/v6/LeFlHvsZjXu2c3ZRgBq9nKCWcynf_cDxXwCLxiixG1c.ttf',
+            fontWeight: 'normal',
+        },
+        {
+            src: 'http://fonts.gstatic.com/s/notosans/v6/PIbvSEyHEdL91QLOQRnZ19qQynqKV_9Plp7mupa0S4g.ttf',
+            fontWeight: 'bold',
+        },
+    ],
+});
+
 const styles = StyleSheet.create({
     page: {
         padding: 32,
+        marginRight: 32,
         display: 'flex',
         flexDirection: 'column',
+        fontFamily: 'Noto Sans',
     },
     recipeName: {
         fontWeight: 'bold',
@@ -105,10 +128,12 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         flexWrap: 'wrap',
         justifyContent: 'space-evenly',
+        fontWeight: 'normal',
     },
     recipeInfoItem: {
         marginBottom: 6,
         fontSize: 12,
+        fontWeight: 'normal',
     },
     subheader: {
         fontSize: 20,
@@ -119,8 +144,11 @@ const styles = StyleSheet.create({
         display: 'flex',
         flexDirection: 'row',
         marginLeft: 24,
+        marginRight: 24,
+        fontWeight: 'normal',
     },
     bullet: {
         height: '100%',
+        fontWeight: 'normal',
     },
 });

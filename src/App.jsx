@@ -41,7 +41,7 @@ function App() {
         ]);
 
         // reset the form fields
-        e.target['ingredient-quantity'].value = 0;
+        e.target['ingredient-quantity'].value = null;
         e.target['ingredient-unit'].value = '';
         e.target['ingredient-name'].value = '';
     };

@@ -14,7 +14,7 @@ export default function InstructionInputForm({
                     type === 'input'
                         ? handlers.addInstructionHandler(e)
                         : handlers.editInstructionHandler(editIndex, e);
-                    toggleInstructionInput();
+                    // toggleInstructionInput();
                 }}
             >
                 <div className="input-field">

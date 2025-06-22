@@ -104,12 +104,12 @@ button {
 
 @media (min-width: 1000px) {
     .editor {
-        min-width: 40%;
+        width: 40%;
         max-height: 100vh;
         overflow-y: auto;
     }
     .display {
-        min-width: 60%;
+        width: 60%;
         max-height: 100vh;
         overflow-y: auto;
     }
@@ -126,9 +126,9 @@ button {
 
 @media (min-width: 1500px) {
     .editor {
-        min-width: 600px;
+        width: 600px;
     }
     .display {
-        min-width: 800px;
+        width: 75ch;
     }
 }

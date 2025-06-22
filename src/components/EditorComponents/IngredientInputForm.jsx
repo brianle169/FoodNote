@@ -14,7 +14,8 @@ export default function IngredientInputForm({
                     type === 'input'
                         ? handlers.addIngredientsHandler(e)
                         : handlers.editIngredientHandler(editIndex, e);
-                    toggleIngredientInput();
+
+                    if (type === 'edit') toggleIngredientInput();
                 }}
             >
                 <div className="input-field">
@@ -23,7 +24,7 @@ export default function IngredientInputForm({
                         name="ingredient-quantity"
                         id="ingredient-quantity"
                         placeholder="Quantity (example: 1.5)"
-                        step="0.1"
+                        step="0.01"
                         required
                     />
                 </div>
