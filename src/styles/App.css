@@ -85,6 +85,8 @@ button {
     }
     .display {
         min-width: 60%;
+        max-height: 100vh;
+        overflow-y: auto;
     }
 
     button:hover {

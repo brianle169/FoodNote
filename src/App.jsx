@@ -1,6 +1,7 @@
 import './styles/App.css';
 import Editor from './components/EditorComponents/Editor.jsx';
 import Display from './components/DisplayComponents/Display.jsx';
+import sampleRecipe from './components/EditorComponents/sampleRecipe.js';
 import { useState } from 'react';
 
 function App() {
@@ -44,6 +45,7 @@ function App() {
         e.target['ingredient-unit'].value = '';
         e.target['ingredient-name'].value = '';
     };
+
     const deleteIngredientHandler = (index) => {
         setIngredients((prevIngredients) =>
             prevIngredients.filter((_, i) => i !== index)
@@ -89,6 +91,24 @@ function App() {
         });
     };
 
+    const loadSampleRecipe = () => {
+        setRecipeName(sampleRecipe.recipeName);
+        setPrepTime(sampleRecipe.prepTime);
+        setCookTime(sampleRecipe.cookTime);
+        setServings(sampleRecipe.servings);
+        setIngredients(sampleRecipe.ingredients);
+        setInstructions(sampleRecipe.instructions);
+    };
+
+    const clear = () => {
+        setRecipeName('');
+        setPrepTime(0);
+        setCookTime(0);
+        setServings(0);
+        setIngredients([]);
+        setInstructions([]);
+    };
+
     const handlers = {
         informationForm: {
             recipeNameChangeHandler,
@@ -130,8 +150,11 @@ function App() {
         <>
             <Editor
                 handlers={handlers}
+                info={{ recipeName, prepTime, cookTime, servings }}
                 ingredients={ingredients}
                 instructions={instructions}
+                fillSampleRecipe={loadSampleRecipe}
+                clear={clear}
             />
             <Display recipe={recipe} />
         </>

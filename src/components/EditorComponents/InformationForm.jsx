@@ -1,5 +1,5 @@
 import '../../styles/InformationForm.css';
-export default function InformationForm({ handlers }) {
+export default function InformationForm({ handlers, info }) {
     return (
         <div className="information-form">
             <h2>Recipe Information</h2>
@@ -12,6 +12,7 @@ export default function InformationForm({ handlers }) {
                         id="recipe-name"
                         placeholder="E.g.: Spaghetti Carbonara"
                         required
+                        value={info.recipeName ? info.recipeName : ''}
                         onChange={handlers.recipeNameChangeHandler}
                     />
                 </div>
@@ -25,6 +26,7 @@ export default function InformationForm({ handlers }) {
                         id="prep-time"
                         placeholder="E.g.: 25"
                         required
+                        value={info.prepTime ? info.prepTime : ''}
                         onChange={handlers.prepTimeChangeHandler}
                     />
                 </div>
@@ -38,6 +40,7 @@ export default function InformationForm({ handlers }) {
                         id="cook-time"
                         placeholder="E.g.: 60"
                         required
+                        value={info.cookTime ? info.cookTime : ''}
                         onChange={handlers.cookTimeChangeHandler}
                     />
                 </div>
@@ -49,6 +52,7 @@ export default function InformationForm({ handlers }) {
                         id="servings"
                         placeholder="E.g.: 4"
                         required
+                        value={info.servings ? info.servings : ''}
                         onChange={handlers.servingsChangeHandler}
                     />
                 </div>

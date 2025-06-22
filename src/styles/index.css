@@ -74,6 +74,10 @@ h6 {
     text-wrap: balance;
 }
 
+img {
+    display: initial;
+}
+
 /*
     10. Create a root stacking context
   */

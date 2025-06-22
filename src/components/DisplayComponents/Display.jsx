@@ -1,30 +1,37 @@
 export default function Display({ recipe }) {
     return (
         <div className="display">
-            <h2>{recipe.recipeName}</h2>
-            <p>
-                <strong>Preparation time:</strong> {recipe.prepTime} minutes
-            </p>
-            <p>
-                <strong>Cooking time:</strong> {recipe.cookTime} minutes
-            </p>
-            <p>
-                <strong>Servings:</strong> {recipe.servings}
-            </p>
-            <p>
-                <strong>Total time:</strong> {recipe.totalTimeString()}
-            </p>
-            <h3>Ingredients</h3>
-            <ul className="ingredients-list">
-                {recipe.ingredients.map((ingredient, index) => (
-                    <li
-                        key={index}
-                        className="ingredient-list-item"
-                    >
-                        {ingredient.toString()}
-                    </li>
-                ))}
-            </ul>
+            <h1>{recipe.recipeName}</h1>
+            <div className="recipe-info">
+                <span>
+                    <strong>Preparation Time:</strong> {recipe.prepTime} minutes
+                </span>
+                <span>
+                    <strong>Cook Time:</strong> {recipe.cookTime} minutes
+                </span>
+                <span>
+                    <strong>Total Time:</strong> {recipe.totalTimeString()}
+                </span>
+                <span>
+                    <strong>Servings:</strong> {recipe.servings}
+                </span>
+            </div>
+            <div className="ingredients">
+                <h2>Ingredients:</h2>
+                <ul>
+                    {recipe.ingredients.map((ingredient, index) => (
+                        <li key={index}>{ingredient.toString()}</li>
+                    ))}
+                </ul>
+            </div>
+            <div className="instructions">
+                <h2>Instructions:</h2>
+                <ol>
+                    {recipe.instructions.map((instruction, index) => (
+                        <li key={index}>{instruction}</li>
+                    ))}
+                </ol>
+            </div>
         </div>
     );
 }
