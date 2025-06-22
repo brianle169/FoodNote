@@ -18,7 +18,6 @@ export default function IngredientInputForm({
                 }}
             >
                 <div className="input-field">
-                    {/* <label htmlFor="ingredient-quantity">Quantity: </label> */}
                     <input
                         type="number"
                         name="ingredient-quantity"
@@ -29,7 +28,6 @@ export default function IngredientInputForm({
                     />
                 </div>
                 <div className="input-field">
-                    {/* <label htmlFor="ingredient-unit">Unit: </label> */}
                     <select
                         name="ingredient-unit"
                         id="ingredient-unit"
@@ -54,7 +52,6 @@ export default function IngredientInputForm({
                     </select>
                 </div>
                 <div className="input-field">
-                    {/* <label htmlFor="ingredient-name">Ingredient: </label> */}
                     <input
                         type="text"
                         name="ingredient-name"

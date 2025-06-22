@@ -33,7 +33,6 @@ export default function IngredientsForm({ handlers, ingredients }) {
                         <button
                             className="edit-ingredient-button"
                             onClick={() => {
-                                // handlers.editIngredientHandler(index);
                                 setEditIndex(
                                     (prevIndex) => (prevIndex = index)
                                 );

@@ -5,7 +5,6 @@ export default function InformationForm({ handlers, info }) {
             <h2>Recipe Information</h2>
             <div className="information-form-body">
                 <div className="input-field">
-                    {/* <label htmlFor="recipe-name">Recipe name: </label> */}
                     <input
                         type="text"
                         name="recipe-name"
@@ -17,9 +16,6 @@ export default function InformationForm({ handlers, info }) {
                     />
                 </div>
                 <div className="input-field">
-                    {/* <label htmlFor="prep-time">
-                        Preparation time (<em>minutes</em>):
-                    </label> */}
                     <input
                         type="number"
                         name="prep-time"
@@ -31,9 +27,6 @@ export default function InformationForm({ handlers, info }) {
                     />
                 </div>
                 <div className="input-field">
-                    {/* <label htmlFor="cook-time">
-                        Cooking time (<em>minutes</em>):
-                    </label> */}
                     <input
                         type="number"
                         name="cook-time"
@@ -45,7 +38,6 @@ export default function InformationForm({ handlers, info }) {
                     />
                 </div>
                 <div className="input-field">
-                    {/* <label htmlFor="servings">Servings: </label> */}
                     <input
                         type="number"
                         name="servings"
